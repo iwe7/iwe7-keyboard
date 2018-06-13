@@ -39,11 +39,9 @@ export class KeyboardStringComponent extends CustomComponent<any> {
     }
 
     _ngOnHover(e: any) {
-        console.log(e);
         if (e.type === 'start') {
             this.render.addClass(e.ele, 'active');
         } else {
-            console.log(e);
             if (e.data) {
                 this._customData(e.data);
             }
