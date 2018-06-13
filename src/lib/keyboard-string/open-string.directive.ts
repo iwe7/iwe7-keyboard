@@ -30,7 +30,6 @@ export class OpenKeyboardStringDirective {
         const element: HTMLElement = document.documentElement;
         const rect = element.getBoundingClientRect();
         const height = (rect.width / 10 - 5) * 1.2;
-        console.log(height);
         const height2 = (height + 5) * 4 + 50;
         this.menuListenr = this.menu.show('bottom', height2, factory, control).subscribe();
     }

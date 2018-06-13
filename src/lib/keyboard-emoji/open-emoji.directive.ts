@@ -22,7 +22,6 @@ export class OpenKeyboardEmojiDirective {
 
     open() {
         const control = (data: string) => {
-            console.log(data);
             this.openKeyboardEmoji.emit(data);
         };
         if (this.subscription) {
