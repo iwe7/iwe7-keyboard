@@ -16,6 +16,10 @@ export class OpenKeyboardEmojiDirective {
         public resolver: ComponentFactoryResolver
     ) { }
 
+    hide() {
+        this.menu.hide();
+    }
+
     open() {
         const control = (data: string) => {
             console.log(data);

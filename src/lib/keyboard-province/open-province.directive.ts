@@ -15,6 +15,10 @@ export class OpenKeyboardProvinceDirective {
         public menu: Iwe7MenuService
     ) { }
 
+    hide() {
+        this.menu.hide();
+    }
+
     open() {
         const control = (data: string) => {
             this.openKeyboardProvince.emit(data);

@@ -15,6 +15,10 @@ export class OpenKeyboardStringDirective {
         public menu: Iwe7MenuService
     ) { }
 
+    hide() {
+        this.menu.hide();
+    }
+
     open() {
         const control = (data: string) => {
             this.openKeyboardString.emit(data);
