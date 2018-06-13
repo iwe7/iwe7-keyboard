@@ -10,6 +10,7 @@ export class OpenKeyboardEmojiDirective {
     _click(e: any) {
         this.open();
     }
+    subscription: any;
     constructor(
         public menu: Iwe7MenuService,
         public resolver: ComponentFactoryResolver
@@ -20,7 +21,10 @@ export class OpenKeyboardEmojiDirective {
             console.log(data);
             this.openKeyboardEmoji.emit(data);
         };
+        if (this.subscription) {
+            this.subscription.unsubscribe();
+        }
         const factory = this.resolver.resolveComponentFactory(KeyboardEmojiComponent);
-        return this.menu.show('bottom', 300, factory, control).subscribe();
+        this.subscription = this.menu.show('bottom', 300, factory, control).subscribe();
     }
 }

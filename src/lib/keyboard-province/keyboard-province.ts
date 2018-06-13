@@ -24,8 +24,8 @@ export class KeyboardProvinceComponent extends KeyboardStringComponent {
 
     _ngOnHover(e: any) {
         super._ngOnHover(e);
-        setTimeout(() => {
+        if (e.type !== 'start') {
             this.sure();
-        }, 300);
+        }
     }
 }
